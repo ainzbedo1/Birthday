@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>My App</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.min.css">
+
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+
+      .wallpaper {
+          background-image: url("Media/background.jpg");
+          background-repeat: no-repeat;
+          background-position: right top;
+
+          background-size: cover;
+      }
+
+      .wallpaper2 {
+          background-image: url("Media/background2.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: right top;
+      }
+
+      .wallpaper3 {
+          background-image: url("Media/background3.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: right top;
+      }
+
+      .wallpaper4 {
+          background-image: url("Media/background4.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: right top;
+      }
+
+      .wallpaper5 {
+          background-image: url("Media/background5.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: right top;
+      }
+
+      .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
+          height: 100%;
+          padding-top: 20%;
+      }
+
+      .md .block-title {
+        margin:  0px 16px 16px;
+        padding-top: 10px;
+      }
+
+      .background-black {
+        padding: 0;
+        background-color: rgba(255,255,255, 0.5);
+      }
+
+
+      .demo-facebook-card .card-header {
+          display: block;
+          padding: 10px;
+        }
+      .demo-facebook-card .demo-facebook-avatar {
+        float: left;
+      }
+      .demo-facebook-card .demo-facebook-name {
+        margin-left: 44px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+      .demo-facebook-card .demo-facebook-date {
+        margin-left: 44px;
+        font-size: 13px;
+        color: #8e8e93;
+      }
+      .demo-facebook-card .card-footer {
+        background: #fafafa;
+      }
+      .demo-facebook-card .card-footer a {
+        color: #81848b;
+        font-weight: 500;
+      }
+      .demo-facebook-card .card-content img {
+        display: block;
+      }
+      .demo-facebook-card .card-content-padding {
+        padding: 15px 10px;
+      }
+      .demo-facebook-card .card-content-padding .likes {
+        color: #8e8e93;
+      }
+
+      img.icon {
+
+        height: 250px;
+        width: 350px;
+      }
+
+
+
+      .absPos {
+          position: absolute;
+      }
+      .relPos {
+          position: relative;
+      }
+
+      #photoBox {
+          width: 360px;
+          height: 400px;
+      }
+      #men {
+          width: 180px;
+          top: 20px;
+          left: 10px;
+          z-index: 6;
+      }
+      #wamen {
+          width: 180px;
+          top: 90px;
+          left: 170px;
+          z-index: 10;
+      }
+      #pic {
+          width: 380px;
+          height: 400px;
+          display: none;
+      }
+      #hide p{
+          width: 360px;
+          height: 400px;
+          color: white;
+          background-color: #40E0D0;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 10px auto;
+      }
+      #pic2 {
+          width: 380px;
+          height: 400px;
+          display: none;
+      }
+      #hide2 p{
+          width: 360px;
+          height: 400px;
+          color: white;
+          background-color: #f9492a;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 10px auto;
+      }
+
+    </style>
+</head>
+
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+             <!-- Top Navbar -->
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+
+                            
+
+
+                            <!-- Slider container -->
+                            <div class="swiper-container">
+                                <!-- Slides wrapper -->
+                                <div class="swiper-wrapper" >
+                                    <!-- Slides -->
+                                    <div class="swiper-slide wallpaper" style="height:100vh;">
+                                      <figure>
+                                        <img src="Media/cake-slice.png" class="center" style="height:50%;width:50%;">
+                                        <img src="Media/logo.png" class="center">
+                                      </figure>
+
+
+                                    </div>
+
+                                    <div class="swiper-slide wallpaper2" style="height:100vh"> 
+                                      <div class="background-black">
+                                    <div class="block-title" style = "color: black;font-size:20px">Guest List</div>
+                                    <div class="list media-list inset">
+                                          <ul>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/boy.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Bryon W. Huffman</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Friend</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/girl.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Rosy R. Jean</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Mother</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/boy.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Billy T. Jean</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Father</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/boy.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Mickey J. Brown</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Uncle</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/girl.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Portia G. Joyce</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Godmother</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/boy.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Jefferson M. Petersen</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Friend</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/girl.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Ruth B. Singleton</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Cousin</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/girl.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Janice O. Reding</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Cousin</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/boy.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Chad R. Talamantez</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Friend</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/boy.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Matthew H. Darley</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Friend</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/boy.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Eric K. Perez</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Uncle</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/girl.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Linda J. Combs</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Friend</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                            <li>
+                                              <a href="#" class="item-link item-content">
+                                                <div class="item-media"><img src="media/girl.png" width="44"/></div>
+                                                <div class="item-inner">
+                                                  <div class="item-title-row">
+                                                    <div class="item-title">Stephanie R. Collins</div>
+                                                  </div>
+                                                  <div class="item item-text-wrap">Grandmother</div>
+                                                </div>
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+
+                                        </div>
+
+                                      </div>
+
+
+
+                                    <div class="swiper-slide wallpaper3" style="height:100vh">
+                                      <div class="timeline">
+
+                                        <!-- event 1 -->
+                                        <div class="timeline-item">
+                                          <div class="timeline-item-date">21 <small>DEC</small></div>
+                                          <div class="timeline-item-divider"></div>
+                                          <div class="timeline-item-content">
+                                            <div class="timeline-item-inner">
+                                              <div class="timeline-item-time">12:30PM</div>
+                                              <div class="timeline-item-title">Start of event</div>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <!-- event 2 -->
+                                        <div class="timeline-item">
+                                          <div class="timeline-item-date"></div>
+                                          <div class="timeline-item-divider"></div>
+                                          <div class="timeline-item-content">
+                                            <div class="timeline-item-inner">
+                                              <div class="timeline-item-time">2:00PM</div>
+                                              <div class="timeline-item-title">Singing of the national anthem</div>
+                                              <div class="timeline-item item-text-wrap"></div>
+                                              <div class="timeline-item item-text-wrap"></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- event 3 -->
+                                        <div class="timeline-item">
+                                          <div class="timeline-item-date"></div>
+                                          <div class="timeline-item-divider"></div>
+                                          <div class="timeline-item-content">
+                                            <div class="timeline-item-inner">
+                                              <div class="timeline-item-time">3:00PM</div>
+                                              <div class="timeline-item-title">Birthday Party Dance</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- event 4 -->
+                                        <div class="timeline-item">
+                                          <div class="timeline-item-date"></div>
+                                          <div class="timeline-item-divider"></div>
+                                          <div class="timeline-item-content">
+                                            <div class="timeline-item-inner">
+                                              <div class="timeline-item-time">5:35PM</div>
+                                              <div class="timeline-item-title">Event 4</div>
+                                              <div class="timeline-item item-text-wrap">Dinner</div>
+                                              <div class="timeline-item item-text-wrap">Everbody eats</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <!-- event 5 -->
+                                        <div class="timeline-item">
+                                          <div class="timeline-item-date"></div>
+                                          <div class="timeline-item-divider"></div>
+                                          <div class="timeline-item-content">
+                                            <div class="timeline-item-inner">
+                                              <div class="timeline-item-time">8:00PM</div>
+                                              <div class="timeline-item-title">End of Party</div>
+                                              <div class="timeline-item item-text-wrap">Everyone goes home</div>
+                                              <div class="timeline-item item-text-wrap">Text</div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </div>
+
+                                  <div class="swiper-slide wallpaper4" style="height:100vh;">
+
+                                    <!--Owenn's changes-->
+                                    <div class="block-title" style = "color: black;font-size:20px; padding-top: 75px;">Menu</div>
+                                    <div class="list">
+                                        <ul>
+                                          <li class="accordion-item"><a href="#" class="item-content item-link">
+                                              
+                                              <div class="item-inner">
+                                                <div class="item-title">Appetizers</div>
+                                              </div></a>
+                                            <div class="accordion-item-content">
+                                              <div class="block">
+                                                  <div class="item-media"><img src="images/food/appetizers/kinilaw.jpg" class="icon"/></div>
+                                                  <div class="item-title">Kinilaw</div>
+                                                  <div class="item item-text-wrap">Raw seafood dish</div>
+                                              </div>
+                                            </div>
+
+                                            <div class="accordion-item-content">
+                                                <div class="block">
+                                                    <div class="item-media"><img src="images/food/appetizers/tinola.jpg" class="icon"/></div>
+                                                    <div class="item-title">Tinola</div>
+                                                    <div class="item item-text-wrap">Food</div>
+                                                </div>
+                                              </div>
+
+                                          </li>
+                                          <li class="accordion-item"><a href="#" class="item-content item-link">
+                                              
+                                              <div class="item-inner">
+                                                <div class="item-title">Desserts</div>
+                                              </div></a>
+                                            <div class="accordion-item-content">
+                                              <div class="block">
+                                                  <div class="item-media"><img src="images/food/desserts/chocolate_mousse.jpg" class="icon"/></div>
+                                                  <div class="item-title">Chocolate Mousse</div>
+                                                  <div class="item item-text-wrap">A rich chocolate cake with a brownie bottom and a light and fluffy small-batch mousse topping.</div>
+                                              </div>
+                                            </div>
+
+                                            <div class="accordion-item-content">
+                                                <div class="block">
+                                                    <div class="item-media"><img src="images/food/desserts/cookies.jpg" class="icon"/></div>
+                                                    <div class="item-title">Cookies</div>
+                                                    <div class="item item-text-wrap">Cookies laced with dips of chocolate.</div>
+                                                </div>
+                                              </div>
+
+                                              <div class="accordion-item-content">
+                                                  <div class="block">
+                                                      <div class="item-media"><img src="images/food/desserts/ice cream.jpg" class="icon"/></div>
+                                                      <div class="item-title">Ice Cream</div>
+                                                      <div class="item item-text-wrap">Cookies and Cream-flavored ice cream.</div>
+                                                  </div>
+                                                </div>
+
+                                          </li>
+
+                                          <li class="accordion-item"><a href="#" class="item-content item-link">
+                                              
+                                              <div class="item-inner">
+                                                <div class="item-title">Drinks</div>
+                                              </div></a>
+                                            <div class="accordion-item-content">
+                                              <div class="block">
+                                                  <div class="item-media"><img src="images/food/drinks/coke.jpg" class="icon"/></div>
+                                                  <div class="item-title">Softdrinks</div>
+                                                  <div class="item item-text-wrap">Includes Coke, Sprite, & Royal softdrinks.</div>
+                                              </div>
+                                            </div>
+
+                                            <div class="accordion-item-content">
+                                                <div class="block">
+                                                    <div class="item-media"><img src="images/food/drinks/juice.jpg" class="icon"/></div>
+                                                    <div class="item-title">Juice</div>
+                                                    <div class="item item-text-wrap">Comes in orange and mango flavors.</div>
+                                                </div>
+                                              </div>
+
+                                              <div class="accordion-item-content">
+                                                  <div class="block">
+                                                      <div class="item-media"><img src="images/food/drinks/water.jpg" class="icon"/></div>
+                                                      <div class="item-title">Water</div>
+                                                      <div class="item item-text-wrap">The essence of life.</div>
+                                                  </div>
+                                                </div>
+
+                                          </li>
+
+                                          <li class="accordion-item"><a href="#" class="item-content item-link">
+                                              
+                                              <div class="item-inner">
+                                                <div class="item-title">Main Course</div>
+                                              </div></a>
+                                            <div class="accordion-item-content">
+                                              <div class="block">
+                                                  <div class="item-media"><img src="images/food/maincourse/adobo.jpg" class="icon"/></div>
+                                                  <div class="item-title">Softdrinks</div>
+                                                  <div class="item item-text-wrap">A popular dish and cooking process that involves meat, seafood, or vegetables marinated in vinegar, soy sauce, garlic, and black peppercorns, which is browned in oil, and simmered in marinade.</div>
+                                              </div>
+                                            </div>
+
+                                            <div class="accordion-item-content">
+                                                <div class="block">
+                                                    <div class="item-media"><img src="images/food/maincourse/afritada.jpg" class="icon"/></div>
+                                                    <div class="item-title">Afritada</div>
+                                                    <div class="item item-text-wrap">A dish consisting of chicken, beef, or pork braised in tomato sauce with carrots, potatoes, and red and green bell peppers.</div>
+                                                </div>
+                                              </div>
+
+                                              <div class="accordion-item-content">
+                                                  <div class="block">
+                                                      <div class="item-media"><img src="images/food/maincourse/bulalo.jpg" class="icon"/></div>
+                                                      <div class="item-title">Bulalo</div>
+                                                      <div class="item item-text-wrap">Beef.</div>
+                                                  </div>
+                                                </div>
+
+                                                <div class="accordion-item-content">
+                                                    <div class="block">
+                                                        <div class="item-media"><img src="images/food/maincourse/sisig.jpg" class="icon"/></div>
+                                                        <div class="item-title">Sisig</div>
+                                                        <div class="item item-text-wrap">A Kapampangan dish made from parts of pig head and chicken liver, usually seasoned with calamansi, onions and chili peppers.</div>
+                                                    </div>
+                                                  </div>
+
+                                          </li>
+
+                                          <li class="accordion-item"><a href="#" class="item-content item-link">
+                                              
+                                              <div class="item-inner">
+                                                <div class="item-title">Side Dishes</div>
+                                              </div></a>
+                                            <div class="accordion-item-content">
+                                              <div class="block">
+                                                  <div class="item-media"><img src="images/food/sidedishes/spaghetti.jpg" class="icon"/></div>
+                                                  <div class="item-title">Spaghetti</div>
+                                                  <div class="item item-text-wrap">Homemade spaghetti.</div>
+                                              </div>
+                                            </div>
+
+                                            <div class="accordion-item-content">
+                                                <div class="block">
+                                                    <div class="item-media"><img src="images/food/sidedishes/lumpia.jpg" class="icon"/></div>
+                                                    <div class="item-title">Lumpia</div>
+                                                    <div class="item item-text-wrap">Snacks that screams "I am Filipino".</div>
+                                                </div>
+                                              </div>
+
+                                              <div class="accordion-item-content">
+                                                  <div class="block">
+                                                      <div class="item-media"><img src="images/food/sidedishes/siomai.jpg" class="icon"/></div>
+                                                      <div class="item-title">Siomai</div>
+                                                      <div class="item item-text-wrap">Naturalized Filipino food.</div>
+                                                  </div>
+                                                </div>
+
+                                          </li>
+                                          
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  <!--Owenn's changes-->
+
+
+                                  <div class="swiper-slide wallpaper5" style="height:100vh;">
+                                  <div class="card demo-facebook-card">
+                                    <div class="card-header">
+                                      <div class="demo-facebook-avatar"><img src="images/map/user.png" width="34" height="34"/></div>
+                                      <div class="demo-facebook-name">Apo View Hotel</div>
+                                      <div class="demo-facebook-date">Monday at 3:47 PM</div>
+                                    </div>
+                                    <div class="card-content"> <img src="images/map/apo.jpg" width="100%"/></div>
+                                  </div> 
+                                  <div class="card demo-facebook-card">
+                                    <div class="card-content"> <img src="images/map/map.png" width="100%"/></div>
+                                  </div> 
+                                </div>
+
+                                <div class="swiper-slide" style="height:100%;">
+                                  <center>
+                                  <div id = "desirable">
+                                    <div id="photoBox" class="relPos">
+                                        <div id="pic" onclick="hidpic('hide', 'pic')">
+                                          <img id="men" class="absPos" src="pics/men.jpg" />
+                                          <img id="wamen" class="absPos" src="pics/wamen.jpg" />
+                                        </div>
+                                        <div id="hide" onclick="hidpic('pic', 'hide')">
+                                          <p>RECOMMENDED</p>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  <div id = "undesirable">
+                                    <div id="photoBox" class="relPos">
+                                        <div id="pic2" onclick="hidpic('hide2', 'pic2')">
+                                          <img id="men" class="absPos" src="pics/men2.jpg" />
+                                          <img id="wamen" class="absPos" src="pics/wamen2.jpg" />
+                                        </div>
+                                        <div id="hide2" onclick="hidpic('pic2', 'hide2')">
+                                          <p>UNRECOMMENDED</p>
+                                        </div>
+                                    </div>
+                                  </div>
+                                  </center>
+                                </div>
+                                <!-- Pagination, if required -->
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+        </div>
+    </div>
+    <script>
+      function hidpic(i, j){
+        FX.fadeIn(document.getElementById(i), {
+            duration: 2500,
+        });
+        document.getElementById(i).style.display='block';
+        document.getElementById(j).style.display='none';
+      }
+      (function() {
+          var FX = {
+              easing: {
+                  linear: function(progress) {
+                      return progress;
+                  },
+                  quadratic: function(progress) {
+                      return Math.pow(progress, 2);
+                  },
+                  swing: function(progress) {
+                      return 0.5 - Math.cos(progress * Math.PI) / 2;
+                  },
+                  circ: function(progress) {
+                      return 1 - Math.sin(Math.acos(progress));
+                  },
+                  back: function(progress, x) {
+                      return Math.pow(progress, 2) * ((x + 1) * progress - x);
+                  },
+                  bounce: function(progress) {
+                      for (var a = 0, b = 1, result; 1; a += b, b /= 2) {
+                          if (progress >= (7 - 4 * a) / 11) {
+                              return -Math.pow((11 - 6 * a - 11 * progress) / 4, 2) + Math.pow(b, 2);
+                          }
+                      }
+                  },
+                  elastic: function(progress, x) {
+                      return Math.pow(2, 10 * (progress - 1)) * Math.cos(20 * Math.PI * x / 3 * progress);
+                  }
+              },
+              animate: function(options) {
+                  var start = new Date;
+                  var id = setInterval(function() {
+                      var timePassed = new Date - start;
+                      var progress = timePassed / options.duration;
+                      if (progress > 1) {
+                          progress = 1;
+                      }
+                      options.progress = progress;
+                      var delta = options.delta(progress);
+                      options.step(delta);
+                      if (progress == 1) {
+                          clearInterval(id);
+                          //options.complete();
+                      }
+                  }, options.delay || 10);
+              },
+              fadeOut: function(element, options) {
+                  var to = 1;
+                  this.animate({
+                      duration: options.duration,
+                      delta: function(progress) {
+                          progress = this.progress;
+                          return FX.easing.swing(progress);
+                      },
+                      complete: options.complete,
+                      step: function(delta) {
+                          element.style.opacity = to - delta;
+                      }
+                  });
+              },
+              fadeIn: function(element, options) {
+                  var to = 0;
+                  this.animate({
+                      duration: options.duration,
+                      delta: function(progress) {
+                          progress = this.progress;
+                          return FX.easing.swing(progress);
+                      },
+                      complete: options.complete,
+                      step: function(delta) {
+                          element.style.opacity = to + delta;
+                      }
+                  });
+              }
+          };
+          window.FX = FX;
+      })()
+    </script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>
